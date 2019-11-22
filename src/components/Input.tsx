@@ -25,7 +25,7 @@ const Input: React.FC<InputProps> = props => {
   };
 
   return (
-    <div>
+    <div className='add-todo'>
       <input
         type='text'
         placeholder='add new works'

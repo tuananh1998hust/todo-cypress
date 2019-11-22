@@ -7,7 +7,7 @@ interface TodoItemProps {
 
 const TodoItem: React.FC<TodoItemProps> = (props: TodoItemProps) => {
   const { item } = props;
-  return <div>{item.text}</div>;
+  return <div className='todo-item'>{item.text}</div>;
 };
 
 export default TodoItem;

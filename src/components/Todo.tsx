@@ -10,7 +10,7 @@ const Todo: React.FC<TodoProps> = (props: TodoProps) => {
   const { todolist } = props;
 
   return (
-    <div>
+    <div className='todo-list'>
       {todolist.map((todo: TodoModel) => (
         <TodoItem key={todo.id} item={todo} />
       ))}
