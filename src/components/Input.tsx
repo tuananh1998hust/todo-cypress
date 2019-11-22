@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
+import uuid from 'uuid';
 import { TodoModel } from '../models/todo';
 
 interface InputProps {
-  todolist: TodoModel[];
   addTodo: (todo: TodoModel) => void;
 }
 
 const Input: React.FC<InputProps> = props => {
-  const { addTodo, todolist } = props;
+  const { addTodo } = props;
   const [text, setText] = useState('');
 
   const handleClick = () => {
     const todo: TodoModel = {
-      id: todolist.length,
+      id: uuid(),
       text,
       iscompleted: false
     };
@@ -32,7 +32,9 @@ const Input: React.FC<InputProps> = props => {
         value={text}
         onChange={e => handleChange(e)}
       />
-      <button onClick={handleClick}>ADD TODO</button>
+      <button className='btn-add' onClick={handleClick}>
+        ADD TODO
+      </button>
     </div>
   );
 };
